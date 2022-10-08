@@ -1,0 +1,30 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <p align="center">
+      <ion-title>
+        Articulos de la tienda
+      </ion-title>
+    </p>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-card>
+    <ion-card-header>
+      <p align="center">
+        <img src="assets/articulos.png">
+      </p>
+    </ion-card-header>
+    <p align="center">
+      <ion-col width-33>
+        <ion-button (click)="goToList()" size="large" class="button button_centered">Ver Todo</ion-button>
+      </ion-col>
+      <ion-col width-33>
+        <ion-button (click)="goToCreate()" size="large" class="button button_centered">Nuevo</ion-button>
+      </ion-col>
+      <ion-col>
+        <ion-button (click)="goBack()" size="large" class="button button_centered">Inicio</ion-button>
+      </ion-col>
+    </p>
+  </ion-card>
+</ion-content>

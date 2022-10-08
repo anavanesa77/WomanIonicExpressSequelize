@@ -1,0 +1,7 @@
+{
+  "name": "appWoman",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

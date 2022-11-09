@@ -1,4 +1,4 @@
-# Ionic (frontend) and NodeJs (backend) 
+# B.Woman Canarias. 
 
 This project is a basic application for a clothing store in Ionic (frontend) and NodeJS (backend) using Sequelize as ORM to access a MySQL database.
 

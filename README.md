@@ -45,6 +45,21 @@ npm install
 
 2. You need to create db_woman database without password for connection to your MySQL server.
 
+3. Inside the file db.config.js include the following info:
+```js
+module.exports = {
+    HOST: "localhost",
+    USER: "root",
+    PASSWORD: "",
+    DB: "db_woman",
+    dialect: "mysql",
+    pool: {
+        max: 5,
+        min: 0,
+        acquire: 30000,
+        idle: 10000
+};
+```
 
 Finally to start enjoying this project.
 
@@ -54,7 +69,16 @@ npm node.js
 
 cd WomanIonicExpressSequelize-master/frontend
 ionic serve --lab
+
 ```
+
+## Postman
+
+You can test the backend is running with Postman.
+
+[![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/23242060-77d96949-b2cc-4a6d-bd2e-68eca7c5c715?action=collection%2Ffork&collection-url=entityId%3D23242060-77d96949-b2cc-4a6d-bd2e-68eca7c5c715%26entityType%3Dcollection%26workspaceId%3Df0ac5b98-26b0-4d2f-8b6e-b3cc58c39e87)
+
+[Link to the API documentation](https://documenter.getpostman.com/view/23380032/2s8YeiwbA8)
 
 Enjoy!!!
 

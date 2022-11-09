@@ -33,10 +33,10 @@ You need a node.js working environment. The LTS is recommended: https://nodejs.o
 Once you have cloned the project install all dependencies.
 
 ```
-cd AppWoman/frontend
+cd WomanIonicExpressSequelize-master/frontend
 npm install
 
-cd AppWoman/backend
+cd WomanIonicExpressSequelize-master/backend
 npm install
 ```
 
@@ -49,10 +49,10 @@ npm install
 Finally to start enjoying this project.
 
 ```
-cd AppWoman/backend
+cd WomanIonicExpressSequelize-master/backend
 npm node.js
 
-cd AppWoman/frontend
+cd WomanIonicExpressSequelize-master/frontend
 ionic serve --lab
 ```
 

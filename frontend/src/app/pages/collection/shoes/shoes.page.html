@@ -1,0 +1,20 @@
+<app-header style="text-align:center"></app-header>
+
+<ion-content>
+  <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content refreshingSpinner="bubbles"></ion-refresher-content>
+  </ion-refresher>
+  <ion-list lines="none">
+    <ion-item *ngFor="let a of articles">
+      <ion-avatar slot="start" *ngIf="a.collection=='Calzado'">
+        <img *ngIf="a.filename" src="http://localhost:8080/images/{{a.filename}}" alt="image" />
+      </ion-avatar>
+      <ion-label *ngIf="a.collection=='Calzado'">
+        <p><b>{{a.name}}</b>
+        <p>
+        <p>{{a.price}}</p>
+        <p>{{a.collection}}</p>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+</ion-content>

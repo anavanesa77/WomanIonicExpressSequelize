@@ -8,7 +8,7 @@ import { Observable } from 'rxjs';
 
 export class ArticleService {
 
-  endpoint = "http://localhost:8080/api/article";
+  endPoint = "http://localhost:8080/api/article";
 
   httpOptions = {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' })
@@ -16,33 +16,27 @@ export class ArticleService {
 
   constructor(private httpClient: HttpClient) { }
 
-
   getArticles() {
-    return this.httpClient.get(this.endpoint);
+    return this.httpClient.get(this.endPoint);
   }
 
-  // getArticle(id) {
-  //   return this.httpClient.get(this.endpoint + '/' + id);
-  // }
+  createArticles(article, blob) {
+    let formData = new FormData();
+    formData.append("name", article.name);
+    formData.append("price", article.price);
+    formData.append("collection", article.collection);
+    formData.append("file", blob);
 
-  // createArticle(article: ArticleService): Observable<any> {
-  //   return this.httpClient.post(this.endpoint, article, this.httpOptions);
-  // }
-
-  createArticle(article: ArticleService): Observable<any> {
-    return this.httpClient.post(this.endpoint, article, this.httpOptions);
+    return this.httpClient.post(this.endPoint, formData);
   }
 
-  // updateArticle(id, article): Observable<any> {
-  //   let valores: string;
-  //   valores = this.endpoint + '/' + id;
-  //   console.log('Service ruta=' + valores);
-  //   return this.httpClient.put(this.endpoint + '/' + id, JSON.stringify({ ...article }), this.httpOptions);
-  // }
-
-  // deleteArticle(id) {
-  //   console.log(this.endpoint + '/' + id, this.httpOptions);
-  //   return this.httpClient.delete(this.endpoint + '/' + id, this.httpOptions);
-  // }
-
+  updateArticle(id: any, data: any): Observable<any> {
+    return this.httpClient.put(`${this.endPoint}/${id}`, data);
+  }
+  deleteArticle(id: any): Observable<any> {
+    return this.httpClient.delete(`${this.endPoint}/${id}`);
+  }
+  deleteAll(): Observable<any> {
+    return this.httpClient.delete(this.endPoint);
+  }
 }

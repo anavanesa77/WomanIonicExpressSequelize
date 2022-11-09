@@ -9,6 +9,9 @@ module.exports = (sequelize, Sequelize) => {
         collection: {
             type: Sequelize.STRING
         },
+        filename: {
+            type: Sequelize.STRING
+        }
     }
     );
 

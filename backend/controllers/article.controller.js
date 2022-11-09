@@ -2,9 +2,8 @@ const db = require("../models");
 const Article = db.article;
 const Op = db.Sequelize.Op;
 
-// Create and Save a new Bicycle
-exports.create = (req, res) => {
 
+exports.create = (req, res) => {
     if (!req.body.name || !req.body.price || !req.body.collection) {
         res.status(400).send({
             message: "El contenido no puede estar vacio"
@@ -15,6 +14,7 @@ exports.create = (req, res) => {
         name: req.body.name,
         price: req.body.price,
         collection: req.body.collection,
+        filename: req.file ? req.file.filename : ""
     }
 
 
@@ -29,7 +29,6 @@ exports.create = (req, res) => {
         });
 };
 
-
 exports.findAll = (req, res) => {
     Article.findAll()
         .then(data => {
@@ -43,11 +42,23 @@ exports.findAll = (req, res) => {
         })
 };
 
+exports.findAllActived = (req, res) => {
+    Article.findAll({ where: { actived: true } })
+        .then(data => {
+            res.send(data);
+        })
+        .catch(err => {
+            res.status(500).send({
+                message:
+                    err.message || "¡Lo siento! No se ha encontrado el artículo"
+            });
+        });
+};
 
 exports.findOne = (req, res) => {
-    const id = req.params.id;
+    const collection = req.params.collection;
 
-    Article.findByPk(id)
+    Article.findByPk(collection)
         .then(data => {
             if (data) {
                 res.send(data);
@@ -91,7 +102,6 @@ exports.update = (req, res) => {
 
 exports.delete = (req, res) => {
     const id = req.params.id;
-
     Article.destroy({
         where: { id: id }
     })

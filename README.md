@@ -1,25 +1,68 @@
-B WOMAN CANARIAS
-Este es un proyecto de creación de una app de una tienda de ropa. En ella podrás ver las últimas tendencias.
-Estas instrucciones te permitirán obtener una copia del proyecto en funcionamiento en tu máquina local para propósitos de desarrollo y pruebas.
+# Ionic (frontend) and NodeJs (backend) 
 
-PRE-REQUISITOS 📋
-Para ver este proyecto es necesario instalar desde el terminal:
-*IONIC
-*EXPRESS
-*Sequelizees
-*Mysql2
+This project is a basic application for a clothing store in Ionic (frontend) and NodeJS (backend) using Sequelize as ORM to access a MySQL database.
 
-CONSTRUIDO CON 🛠️
-Menciona las herramientas que utilizaste para crear tu proyecto
-*Visual Studio Code
-*IONIC
-*EXPRESS
-*Sequelizees
-*Mysql2
 
-RECURSOS
-Enlace a POSTMAN con los accesos a los end-points: https://www.getpostman.com/collections/ce2609849be6b02b2987
+## Getting Started
 
-AUTORES ✒️
-Ana Vanesa Olivares Ramos
-Tiburcio - Documentación
+Download links:
+
+From Github: https://github.com/anavanesa77/WomanIonicExpressSequelize
+
+## Prerequisites
+
+You need a working environment with:
+* [Git](https://git-scm.com) - You can install it from https://git-scm.com/downloads.
+* [MySQL](https://www.mysql.com) - You can install it from https://www.mysql.com/downloads/.
+* [Node.js](https://nodejs.org) - Install node.js from https://nodejs.org/es/download/. It's advisable to install the LTS version.
+
+## General Installation instructions
+
+The best option to start with this project is cloning it in your PC:
+
+```
+git clone https://github.com/anavanesa77/WomanIonicExpressSequelize.git
+```
+
+This project contains 2 different parts:
+* Frontend
+* Backend
+
+You need a node.js working environment. The LTS is recommended: https://nodejs.org/es/
+
+Once you have cloned the project install all dependencies.
+
+```
+cd AppWoman/frontend
+npm install
+
+cd AppWoman/backend
+npm install
+```
+
+* For your backend part:
+1. You need a mysql server working.
+
+2. You need to create db_woman database without password for connection to your MySQL server.
+
+
+Finally to start enjoying this project.
+
+```
+cd AppWoman/backend
+npm node.js
+
+cd AppWoman/frontend
+ionic serve --lab
+```
+
+Enjoy!!!
+
+
+## Built With
+
+* [Visual Studio Code](https://code.visualstudio.com/) - The Editor used in this project
+* [Node.js](https://nodejs.org/) - Node.js® is a JavaScript runtime built on Chrome's V8 JavaScript engine.
+* [sequelize](https://sequelize.org/) - Sequelize is a promise-based Node.js ORM for Postgres, MySQL, MariaDB, SQLite and Microsoft SQL Server. It features solid transaction support, relations, eager and lazy loading, read replication and more.
+* [express](https://expressjs.com/) - Fast, unopinionated, minimalist web framework for Node.js.
+* [MySQL Workbench](https://www.mysql.com/products/workbench/) - MySQL Workbench is a unified visual tool for database architects, developers, and DBAs.

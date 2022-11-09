@@ -8,13 +8,16 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MenuComponent } from './components/menu/menu.component';
+import { ComponentsModule } from './components/components.module';
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, MenuComponent],
   imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule,
     HttpClientModule,
-    FormsModule, ReactiveFormsModule],
+    FormsModule, ReactiveFormsModule, ComponentsModule],
   providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
+  exports: [MenuComponent],
   bootstrap: [AppComponent],
 })
 export class AppModule { }

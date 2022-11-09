@@ -7,23 +7,53 @@ const routes: Routes = [
     redirectTo: 'home',
     pathMatch: 'full'
   },
-
   {
     path: 'home',
-    loadChildren: () => import('./home/home.module').then(m => m.HomePageModule)
+    loadChildren: () => import('./pages/home/home.module').then(m => m.HomePageModule)
   },
-
   {
     path: 'create',
-    loadChildren: () => import('./article/create/create.module').then(m => m.CreatePageModule)
+    loadChildren: () => import('./pages/collection/article/create/create.module').then(m => m.CreatePageModule)
   },
   {
     path: 'list',
-    loadChildren: () => import('./article/list/list.module').then(m => m.ListPageModule)
+    loadChildren: () => import('./pages/collection/article/list/list.module').then(m => m.ListPageModule)
+  },
+  {
+    path: 'update/:id',
+    loadChildren: () => import('./pages/collection/article/update/update.module').then(m => m.UpdatePageModule)
   },
   {
     path: 'article',
-    loadChildren: () => import('./article/article.module').then(m => m.ArticlePageModule)
+    loadChildren: () => import('./pages/collection/article/article.module').then(m => m.ArticlePageModule)
+  },
+  {
+    path: 'administrator',
+    loadChildren: () => import('./pages/collection/administrator/administrator.module').then(m => m.AdministratorPageModule)
+  },
+  {
+    path: 'shoes',
+    loadChildren: () => import('./pages/collection/shoes/shoes.module').then(m => m.ShoesPageModule)
+  },
+  {
+    path: 'accessories',
+    loadChildren: () => import('./pages/collection/accessories/accessories.module').then(m => m.AccessoriesPageModule)
+  },
+  {
+    path: 'alert',
+    loadChildren: () => import('./pages/alert/alert.module').then( m => m.AlertPageModule)
+  },
+  {
+    path: 'action-sheet',
+    loadChildren: () => import('./pages/action-sheet/action-sheet.module').then( m => m.ActionSheetPageModule)
+  },
+  {
+    path: 'collection',
+    loadChildren: () => import('./pages/collection/collection.module').then( m => m.CollectionPageModule)
+  },
+  {
+    path: 'clothing',
+    loadChildren: () => import('./pages/collection/clothing/clothing.module').then( m => m.ClothingPageModule)
   },
 ];
 
